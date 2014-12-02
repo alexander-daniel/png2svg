@@ -20,6 +20,10 @@
   },
   "homepage": "https://github.com/alexander-daniel/png2svg",
   "dependencies": {
-    "get-pixels": "^3.1.0"
-  }
+    "get-pixels": "^3.1.0",
+    "progress": "^1.1.8"
+  },
+  "engines": {
+    "node": ">=0.10"
+  },
 }

@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 'use strict';
 
 var getPixels = require('get-pixels');
