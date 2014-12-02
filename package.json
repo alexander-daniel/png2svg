@@ -3,7 +3,7 @@
   "version": "0.0.2",
   "description": "simple pixel art -> SVG",
   "bin": {
-    "png2svg": "bin/cmd.js"
+    "png2svg": "cmd.js"
   },
   "scripts": {
     "test": "tap test"
