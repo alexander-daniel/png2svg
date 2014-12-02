@@ -1,5 +1,7 @@
 ## Simple png to SVG conversion, pixel by pixel.
 
+See [Example](http://alexander-daniel.github.io/png2svg/)
+
 ## Example
 ```bash
 png2svg sprite.png sprite.svg
