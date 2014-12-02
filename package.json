@@ -4,7 +4,7 @@
   "description": "simple pixel art -> SVG",
   "main": "index.js",
   "bin": {
-    "png2svg": "bin/index.js"
+    "png2svg": "bin/cmd.js"
   },
   "scripts": {
     "test": "tap test"
