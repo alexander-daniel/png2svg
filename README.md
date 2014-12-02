@@ -1,4 +1,4 @@
-# Simple png to SVG conversion, pixel by pixel.
+## Simple png to SVG conversion, pixel by pixel.
 
 ## Example
 ```bash
@@ -16,3 +16,4 @@ npm install -g png2svg
 png2svg {pngFile} {outputFile}
 ```
 
+Awful error handling right now, just a dirty hack to get it done. I'll probably clean it up later.
