@@ -15,26 +15,36 @@ var ProgressBar = require('progress');
 getPixels(image, function(err, pixels) {
 	if (err) return console.log('Bad pixels path');
 	console.log('processing ' + image + ' -> SVG');
-
+	var bar = new ProgressBar(':percent', { total: (pixels.data.buffer.byteLength / 4) });
 	var shape = pixels.shape.slice();
 	var width = shape[0];
 	var height = shape[1];
-	//console.log(pixels.data.buffer);
-	var bar = new ProgressBar(':percent', { total: (pixels.data.buffer.byteLength / 4) });
-
-	svgStream.write('<?xml version="1.0" encoding="utf-8" ?><svg baseProfile="full" height="'+height+'px" version="1.1" width="'+width+'px" xmlns="http://www.w3.org/2000/svg" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xlink="http://www.w3.org/1999/xlink"><defs />');
+	
+	svgStream.write('<?xml version="1.0" encoding="utf-8" ?>'+
+					'<svg baseProfile="full" ' + 
+					'version="1.1" ' + 
+					'height="'+height+'px" ' + 
+					'width="'+width+'px" ' + 
+					'xmlns="http://www.w3.org/2000/svg" ' +
+					'xmlns:ev="http://www.w3.org/2001/xml-events" ' +
+					'xmlns:xlink="http://www.w3.org/1999/xlink"><defs />');
 
 	var c = 0;
 	for (var i = 0; i < height; i += 1) {
 		for (var j = 0; j < width; j += 1) {
-			bar.tick();
-			var pixel = 'rgba(' + pixels.data.buffer[c] + ',' + pixels.data.buffer[c+1] + ',' + pixels.data.buffer[c+2] + ',' + pixels.data.buffer[c+3] + ')';
-			var rectStr = '<rect fill="'+ pixel +'" height="1px" width="1px" x="' + j + '" y="'+ i +'" />';
+			var r = pixels.data.buffer[c];
+			var g = pixels.data.buffer[c+1];
+			var b = pixels.data.buffer[c+2];
+			var a = pixels.data.buffer[c+3];
+
+			var rgbaStr = 'rgba('+r+','+g+','+b+','+a+')';
+			var rectStr = '<rect fill="'+ rgbaStr +'" height="1px" width="1px" x="' + j + '" y="'+ i +'" />';
 			svgStream.write(rectStr);
+			bar.tick();
 			c += 4;
 		}
-
 	}
+	
 	svgStream.end('</svg>', function () {
 		console.log('done!');
 	});
