@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/alexander-daniel/png2svg/issues"
   },
-  "homepage": "https://github.com/alexander-daniel/png2svg"
+  "homepage": "https://github.com/alexander-daniel/png2svg",
+  "dependencies": {
+    "get-pixels": "^3.1.0"
+  }
 }
