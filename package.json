@@ -1,6 +1,6 @@
 {
   "name": "png2svg",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "simple pixel art -> SVG",
   "bin": {
     "png2svg": "./cmd.js"
