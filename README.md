@@ -1,6 +1,8 @@
 ## Simple png to SVG conversion, pixel by pixel.
 
-See [explanation](http://alexander-daniel.github.io/png2svg/)
+See (explanation)[http://alexander-daniel.github.io/png2svg/]
+
+Just a simple use-case of mikola's (get-pixels)[https://github.com/mikolalysenko/get-pixels/]
 
 ## Example
 ```bash
