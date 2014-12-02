@@ -1,6 +1,6 @@
 {
   "name": "png2svg",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "simple pixel art -> SVG",
   "main": "index.js",
   "bin": {
