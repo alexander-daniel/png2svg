@@ -1,0 +1,22 @@
+{
+  "name": "png2svg",
+  "version": "0.0.0",
+  "description": "simple pixel art -> SVG",
+  "main": "index.js",
+  "bin": {
+    "png2svg": "bin/index.js"
+  },
+  "scripts": {
+    "test": "tap test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/alexander-daniel/png2svg"
+  },
+  "author": "Alexander Vados <alex.vados@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alexander-daniel/png2svg/issues"
+  },
+  "homepage": "https://github.com/alexander-daniel/png2svg"
+}
