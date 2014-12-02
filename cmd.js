@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+
 /*jshint strict:false */
 
 var getPixels = require('get-pixels');
