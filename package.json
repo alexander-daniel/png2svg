@@ -17,7 +17,9 @@
   "homepage": "https://github.com/alexander-daniel/png2svg",
   "dependencies": {
     "get-pixels": "^3.1.0",
-    "progress": "^1.1.8"
+    "node-repl": "^1.0.3",
+    "progress": "^1.1.8",
+    "rgb2hex": "^0.1.0"
   },
   "engines": {
     "node": ">=0.10"
