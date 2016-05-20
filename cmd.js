@@ -35,15 +35,19 @@ getPixels(image, function(err, pixels) {
     var c = 0;
     for (var i = 0; i < height; i += 1) {
         for (var j = 0; j < width; j += 1) {
-            var r = pixels.data.buffer[c];
-            var g = pixels.data.buffer[c+1];
-            var b = pixels.data.buffer[c+2];
-            var a = pixels.data.buffer[c+3];
+            var r = pixels.data[c];
+            var g = pixels.data[c+1];
+            var b = pixels.data[c+2];
+            var a = pixels.data[c+3];
 
-            var rgbStr = 'rgb('+r+','+g+','+b+')';
-            var hexObj = rgb2hex(rgbStr);
-            var rectStr = '<rect fill="'+ hexObj.hex +'" height="1px" width="1px" x="' + j + '" y="'+ i +'" />\n';
-            svgStream.write(rectStr);
+            // If colour data is found, draw a rect.
+            if (r !== 0 && g !== 0 && b !== 0) {
+                var rgbStr = 'rgb('+r+','+g+','+b+')';
+                var hexObj = rgb2hex(rgbStr);
+                var rectStr = '<rect fill="'+ hexObj.hex +'" height="1px" width="1px" x="' + j + '" y="'+ i +'" />\n';
+                svgStream.write(rectStr);
+            }
+
             bar.tick();
             c += 4;
         }
