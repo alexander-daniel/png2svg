@@ -9,7 +9,7 @@ var rgb2hex = require('rgb2hex');
 var image = process.argv[2];
 var output = process.argv[3];
 
-if (!output) output = __dirname + './output.svg';
+if (!output) output = __dirname + '/output.svg';
 var svgStream = fs.createWriteStream(output);
 
 var ProgressBar = require('progress');
